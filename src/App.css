@@ -1,42 +1,220 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --text-color: #fff;
+  --btn-color: #ff7500;
+  --list-color: #ff7500;
+  --btnText-color: #fff;
+  --hero-bg: #252420;
+  --list-bg: #ff7500;
+  --border-color: #000;
+  --body-color: rgb(130, 234, 234);
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.light {
+  --text-color: #fff;
+  --btn-color: #000;
+  --list-color: #fff;
+  --btnText-color: #fff;
+  --hero-bg: #252420;
+  --list-bg: #000;
+  --border-color: #000;
+  --body-color: rgb(148, 237, 137);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html {
+  height: 100%;
+  scroll-behavior: smooth;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.root {
+  height: 100%;
 }
-
-.card {
-  padding: 2em;
+main {
+  flex-grow: 1;
 }
-
-.read-the-docs {
-  color: #888;
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* form */
+#Todoform {
+  width: 400px;
+  padding: 5px 8px;
+  border-radius: 11px;
+  border: 2px solid var(--border-color);
+  gap: 5px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+#Todoform:hover {
+  box-shadow: 0px 0px 0px 10px rgba(28, 28, 28, 0.2);
+}
+#Todoform input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: inherit;
+}
+.h2 {
+  margin-bottom: 25px;
+}
+#searchInp {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 280px;
+  margin-right: 5px;
+}
+.form_div {
+  display: flex;
+}
+#submitBtn {
+  display: flex;
+  align-self: normal;
+  justify-content: center;
+  padding: 4px 8px;
+  background-color: #212222;
+  color: var(--btnText-color);
+  border: 0;
+  align-self: flex-start;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+#productList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.list-item {
+  width: 400px;
+  padding: 12px 24px;
+  border-radius: 11px;
+  background-color: #212222;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-item i {
+  cursor: pointer;
+}
+.header-btnn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #212222;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  margin-bottom: 15px;
+}
+.wrapper_color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.trash-png {
+  margin-left: 5px;
+}
+.rasm-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#editInp {
+  width: 250px;
+  height: 22px;
+}
+#editBtn {
+  display: flex;
+  align-self: normal;
+  justify-content: center;
+  padding: 4px 8px;
+  background-color: var(--btnText-color);
+  color: var(--btn-color);
+  border: 0;
+  align-self: flex-start;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+.modal_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+.modal_div {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 12px;
+  gap: 5px;
+}
+.modal {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 80px;
+  top: 30%;
+  left: 50%;
+  background-color: var(--btn-color);
+  border-radius: 8px;
+  border: 1px solid #fff;
+  z-index: 100;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000033;
+  z-index: 10;
+}
+.hidden {
+  display: none;
+}
+#rasm-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rasm1 {
+  width: 21px;
+}
+.rasm2 {
+  width: 30px;
 }

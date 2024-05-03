@@ -1,0 +1,37 @@
+.header {
+  background-color: #212222;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.logo {
+  font-size: 32px;
+  color: #fff;
+}
+.nav-list {
+  display: flex;
+  gap: 25px;
+}
+.listItem {
+  color: #fff;
+  font-size: 20px;
+}
+.listItem:hover {
+  color: red;
+}
+.btn {
+  padding: 8px 24px;
+  border: 0;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  color: #000;
+  transition: all linear 0.2s;
+}
+.btn:hover {
+  background-color: #bdb5b5ac;
+  color: #fff;
+}
