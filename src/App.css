@@ -65,7 +65,7 @@ a {
   margin-bottom: 10px;
 }
 #Todoform:hover {
-  box-shadow: 0px 0px 0px 10px rgba(28, 28, 28, 0.2);
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.364);
 }
 #Todoform input {
   width: 100%;
@@ -156,6 +156,7 @@ a {
 #editInp {
   width: 250px;
   height: 22px;
+  outline: none;
 }
 #editBtn {
   display: flex;
@@ -163,17 +164,27 @@ a {
   justify-content: center;
   padding: 4px 8px;
   background-color: var(--btnText-color);
-  color: var(--btn-color);
+  color: #212222;
   border: 0;
   align-self: flex-start;
   border-radius: 5px;
   margin-top: 2px;
 }
+#closeBtn {
+  padding: 4px 8px;
+  background-color: var(--btnText-color);
+  color: #212222;
+  border: 0;
+  border-radius: 5px;
+  margin-left: 134.5px;
+  margin-top: 15px;
+}
 .modal_div {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 38px;
+  margin-left: 8px;
 }
 .modal_div {
   width: 300px;
@@ -186,14 +197,15 @@ a {
 .modal {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 80px;
+  width: 320px;
+  height: 120px;
   top: 30%;
   left: 50%;
-  background-color: var(--btn-color);
+  background-color: #212222;
   border-radius: 8px;
   border: 1px solid #fff;
   z-index: 100;
+  top: 380px;
 }
 .overlay {
   width: 100%;
@@ -201,7 +213,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background: #00000033;
+  background: #00000069;
   z-index: 10;
 }
 .hidden {

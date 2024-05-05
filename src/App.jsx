@@ -1,12 +1,15 @@
 import { useState } from "react";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import Modal from "./components/modal";
 import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
   const [text, setText] = useState("");
-  const [showModal, setshowModal] = useState(false);
+  const [showModal, setshowModal] = useState({
+    show: false,
+    todoId: "",
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,20 +30,18 @@ function App() {
     setTodos((prev) => prev.filter((todo) => todo.id !== itemId));
   }
 
-  function editItem(params) {}
-
   return (
     <>
       <Header />
       <main className="main">
         <div className="container main-conytainer">
-          <div class="umumiv-wrapper">
-            <div class="container form_container">
-              <div class="wrapper_color">
-                <h2 class="h2">To Do App</h2>
+          <div className="umumiv-wrapper">
+            <div className="container form_container">
+              <div className="wrapper_color">
+                <h2 className="h2">To Do App</h2>
               </div>
               <form id="Todoform" onSubmit={handleSubmit}>
-                <div class="form_div">
+                <div className="form_div">
                   <input
                     id="searchInp"
                     type="text"
@@ -64,6 +65,12 @@ function App() {
                           {text}
                           <div id="rasm-div">
                             <img
+                              onClick={() =>
+                                setshowModal((prev) => {
+                                  return { ...prev, show: true, todoId: id };
+                                  overlay.className.remove("hidden");
+                                })
+                              }
                               src="public/images/edit.svg"
                               alt=""
                               className="rasm1"
@@ -81,25 +88,17 @@ function App() {
                   : "No Data"}
               </ul>
             </div>
-            <modal id="modal" class="modal hidden">
-              <form id="editform">
-                <div class="modal_div">
-                  <input
-                    id="editInp"
-                    type="text"
-                    required
-                    placeholder="Edit todo..."
-                  />
-                  <button id="editBtn" type="submit">
-                    Edit
-                  </button>
-                </div>
-              </form>
-            </modal>
-            <div id="overlay" class="overlay hidden"></div>
           </div>
         </div>
       </main>
+
+      {showModal.show && (
+        <Modal
+          setTodos={setTodos}
+          itemId={showModal.todoId}
+          closeModal={setshowModal}
+        />
+      )}
     </>
   );
 }
